@@ -1,8 +1,8 @@
 config = {
     "batchsize": 32,
-    "num_workers": 4,
+    "num_workers": 1,
     "reload": False,
-    "net": "Cnn6_60k",
+    "net": "model_resnet",
     "dropout": 0.2,
     "specAugment": [128, 2, 32, 2],
     "lr": 1e-3,
