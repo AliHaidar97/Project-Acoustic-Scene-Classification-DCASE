@@ -27,7 +27,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--config",
         type=str,
-        default="configs/example.py",
+        default="configs\example.py",
         help="Path to config file describing training parameters",
     )
     args = parser.parse_args()
@@ -49,11 +49,11 @@ if __name__ == "__main__":
     # ---
     current_dir = os.path.dirname(os.path.abspath(__file__))
     train_dataset = DCaseDataset(
-        current_dir + "/data/TAU-urban-acoustic-scenes-2020-mobile-development/",
+        current_dir + "\data\TAU-urban-acoustic-scenes-2020-mobile-development",
         split="train",
     )
     test_dataset = DCaseDataset(
-        current_dir + "/data/TAU-urban-acoustic-scenes-2020-mobile-development/",
+        current_dir + "\data\TAU-urban-acoustic-scenes-2020-mobile-development",
         split="val",
     )
     loader_train = DataLoader(
@@ -79,6 +79,7 @@ if __name__ == "__main__":
         config["dropout"],
         config["specAugment"],
     )
+
     print("\n\nNet at training time")
     print(net)
     print("Nb. of parameters at training time: ", net.get_nb_parameters() / 1e3, "k")
